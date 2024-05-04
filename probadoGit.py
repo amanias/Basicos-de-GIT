@@ -1,0 +1,1 @@
+# Pues tener un fichero para poder probar el funcionamiento de Git ya que no hay nungún archico.
