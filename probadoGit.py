@@ -3,3 +3,5 @@
 # Cambiando algo para ver que se publica en GitHub
 
 # Pues esta línea solo aparecerá en la Rama2 manteniendo intacta la master.
+
+# A ver el git status -s
