@@ -6,4 +6,4 @@
 
 # A ver el git status -s
 
-# Repitiendo cambios
+# Repitiendo cambios y ver que pasa.
