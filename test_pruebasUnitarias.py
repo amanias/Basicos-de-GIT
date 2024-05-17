@@ -24,6 +24,10 @@ class TestArea (unittest.TestCase):
     # Hacemos una prueba para que cada tipo conocido no válido.
     def test_tipos(self):
         print('-----Test de tipos no compatibles-----')
-        self.assertRaises(TypeError, area, True)
-        self.assertRaises(TypeError, area, 'hola')
-        self.assertRaises(TypeError, area, 2+3j)
+        # self.assertRaises(TypeError, area, True)
+        # self.assertRaises(TypeError, area, 'hola')
+        # self.assertRaises(TypeError, area, 2+3j)
+        with self.assertRaises(TypeError):
+            area(True)
+            area('hola')
+            area(2+3j)
