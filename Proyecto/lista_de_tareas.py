@@ -8,8 +8,6 @@ class ListaDeTareas():
     # Constructor de una "Lista de Tareas" vacía.
     def __init__(self):
         self.__lista_de_tareas = list()
-        # Saber el número de Tareas en la Lista.
-        self.__longitud = 0
     
     # Destructor de la Lista de Tareas
     def __del__(self):
@@ -27,7 +25,6 @@ class ListaDeTareas():
         descripcion = input("Descripción de la tarea: ")
         tarea = Tarea(descripcion)
         self.__lista_de_tareas.append(tarea)
-        self.__longitud += 1
         print("\nTarea agregada.")
 
     # Marcar una tarea como completada:
@@ -39,7 +36,7 @@ class ListaDeTareas():
             indice = int(input("\nIntroduce el número de la tarea completada: "))
             # Manejamos una fila no una cola por lo que NO se accede por el final
             # if 0 < indice <= len(self.__lista_de_tareas):
-            if 0 < indice <= self.__longitud:
+            if 0 < indice <= self.numero_de_tareas():
                 tarea = self.__lista_de_tareas[indice - 1]
                 if tarea.get_is_pendiente():
                     tarea.completar()
@@ -57,7 +54,7 @@ class ListaDeTareas():
     def mostrar_tareas(self):
         print("--- Listado de Tareas ---\n")
         # Controlado por el menu principal no haría falta.
-        if not self.__longitud:
+        if self.numero_de_tareas() == 0:
             print("No hay tareassss en la lista.")
         else:
             for indice, tarea in enumerate(self.__lista_de_tareas, 1):
@@ -69,10 +66,9 @@ class ListaDeTareas():
         self.mostrar_tareas()
         try:
             indice = int(input("\nIntroduce el número de la tarea a eliminar: "))
-            if 0 < indice <= self.__longitud:
+            if 0 < indice <= self.numero_de_tareas():
                 tarea = self.__lista_de_tareas.pop(indice - 1)
                 print(f"\nTarea '{tarea.get_descripcion()}' eliminada.")
-                self.__longitud -= 1
             else:
                 raise ValueError
         except (ValueError, IndexError, KeyboardInterrupt):
