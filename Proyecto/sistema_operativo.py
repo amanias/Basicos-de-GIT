@@ -2,8 +2,9 @@
 from os import name as sistema_operativo
 from os import system as comando_sistema
 
+# Limpiar la pantalla en diferentes sistemas operativos
 def limpiar_pantalla():
-    # Limpiar la pantalla en diferentes sistemas operativos
+
     if sistema_operativo == 'nt':  # Windows
         comando_sistema('cls')
     else:  # Unix/Linux/Mac
